@@ -1,0 +1,5 @@
+name: fitnessdata
+channels:
+  - defaults
+prefix: /Users/francesco/anaconda3/envs/fitnessdata
+
