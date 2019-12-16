@@ -25,3 +25,4 @@ for record in fitfile.get_messages():
 The magic here is the way it handles rollovers, that is, when the timestamp_16 counter exceeds 2**16 and starts at zero again. The first part of the operation is to subtract the lower 16 bits of the previous timestamp from the new timestamp_16 value. There are two possible outcomes. If there is no rollover, the result is the difference in seconds between the previous timestamp and the new one, so it's added to the previous timestamp and we get the new value. If there is a rollover happening for this record, the result of the subtraction is negative because timestamp_16 got smaller. The "& 0xffff" at the end does a modulo operation (mod 2**16) that retrieves the correct difference. It can then be added to the previous timestamp the same way.
 
 I'll try to find a file that contains such timestamps. Maybe my watch is able to generate such files, I simply haven't tried. Sometimes there's a sample in the Garmin FIT SDK.
+
